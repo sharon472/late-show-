@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Late Show 🎤</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(120deg, #1e1e2f, #3a3a60);
+      color: white;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background: #000;
+      padding: 20px;
+      text-align: center;
+      font-size: 2rem;
+      letter-spacing: 2px;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      padding: 40px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.1);
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+      backdrop-filter: blur(10px);
+    }
+
+    h2 {
+      border-bottom: 2px solid #ffcc00;
+      padding-bottom: 5px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      padding: 10px;
+      margin: 8px 0;
+      background: rgba(0,0,0,0.4);
+      border-radius: 10px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    input {
+      padding: 10px;
+      border-radius: 8px;
+      border: none;
+      font-size: 1rem;
+    }
+
+    button {
+      padding: 12px;
+      background: #ffcc00;
+      color: black;
+      font-weight: bold;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #ffaa00;
+      transform: scale(1.05);
+    }
+
+    pre {
+      background: black;
+      padding: 10px;
+      border-radius: 10px;
+      overflow-x: auto;
+      max-height: 200px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #000;
+      color: #aaa;
+    }
+  </style>
+</head>
+
+<body>
+  <header> The Late Show Dashboard</header>
+
+  <div class="container">
+
+    <div class="card">
+      <h2>Episodes</h2>
+      <ul id="episodes"></ul>
+    </div>
+
+    <div class="card">
+      <h2> Guests</h2>
+      <ul id="guests"></ul>
+    </div>
+
+    <div class="card">
+      <h2> Add Appearance</h2>
+      <form id="form">
+        <input type="number" id="rating" placeholder="Rating (1–5)" required />
+        <input type="number" id="episode_id" placeholder="Episode ID" required />
+        <input type="number" id="guest_id" placeholder="Guest ID" required />
+        <button>Add Appearance</button>
+      </form>
+    </div>
+
+    <div class="card">
+      <h2> Server Response</h2>
+      <pre id="result"></pre>
+    </div>
+
+  </div>
+
+  <footer>Late Show API • Powered by Flask & SQLAlchemy</footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
